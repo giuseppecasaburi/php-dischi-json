@@ -1,8 +1,8 @@
 # PHP Dischi
 ## Descrizione
 Nome repo: php-dischi-json
-Dobbiamo creare una web-app che permetta di leggere una lista di dischi presente nel nostro server.
-I dischi dovranno avere questa struttura: titolo, artista, url della cover, anno di pubblicazione, genere
+Dobbiamo creare una web-app che permetta di leggere una lista di dischi presente nel nostro server. ✔
+I dischi dovranno avere questa struttura: titolo, artista, url della cover, anno di pubblicazione, genere ✔
 
 **Consigli**
 Nello svolgere l’esercizio seguite un approccio graduale.
