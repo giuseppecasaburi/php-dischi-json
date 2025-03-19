@@ -10,45 +10,51 @@ require_once "./functions.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITunes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
-    <h1>Dischi aggiunti alla playlist personale</h1>
-    <div class="container">
+<body class="bg-dark text-light">
+    <h1 class="text-center my-3">Playlist personale</h1>
+    <div class="container d-flex my-3 gap-3 flex-wrap">
         <?php
         foreach ($dischi as $disco) {
-            echo '<div class="card">'; ?>
-            <h3><?php echo $disco["titolo"]  ?></h3>
-            <p><?php echo $disco["artista"]  ?></p>
-            <span><?php echo $disco["genere"]  ?></span>
-            <span><?php echo $disco["anno"]  ?></span>
-        <?php };
-        echo '</div>';
+            echo '<div class="card text-center" style="width: 18rem;">'; ?>
+            <img src="" alt="" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $disco["titolo"]  ?></h5>
+                <p class="card-text"><?php echo $disco["artista"]  ?></p>
+                <span class="card-text"><?php echo $disco["genere"]  ?></span>
+                <span class="card-text"><?php echo $disco["anno"]  ?></span>
+            </div>
+        <?php
+            echo '</div>';
+        };
+
         ?>
     </div>
 
-    <div class="form">
+    <div class="form my-5 ms-auto me-auto w-50 text-center">
         <h2>Aggiungi un nuovo album</h2>
         <form action="" method="POST">
-            <div>
-                <label for="titolo">Titolo album</label>
-                <input type="text" name="titolo">
+            <div class="pb-3">
+                <label class="d-block" for="titolo">Titolo album</label>
+                <input class="w-50" type="text" name="titolo">
             </div>
-            <div>
-                <label for="artista">Nome Artista</label>
-                <input type="text" name="artista">
+            <div class="pb-3">
+                <label class="d-block" for="artista">Nome Artista</label>
+                <input class="w-50" type="text" name="artista">
             </div>
-            <div>
-                <label for="cover">Url cover album</label>
-                <input type="text" name="cover">
+            <div class="pb-3">
+                <label class="d-block" for="cover">Url cover album</label>
+                <input class="w-50" type="text" name="cover">
             </div>
-            <div>
-                <label for="anno">Anno di pubblicazione</label>
-                <input type="number" name="anno" min=1500 max=2100>
+            <div class="pb-3">
+                <label class="d-block" for="anno">Anno di pubblicazione</label>
+                <input class="w-50" type="number" name="anno" min=1500 max=2100>
             </div>
-            <div>
-                <label for="genre">Genere</label>
-                <select name="genre" id="">
+            <div class="pb-3">
+                <label class="d-block" for="genre">Genere</label>
+                <select class="w-50 text-center" name="genre" id="">
                     <option value="">--Scegli genere--</option>
                     <option value="Pop">Pop</option>
                     <option value="Rock">Rock</option>
@@ -72,7 +78,7 @@ require_once "./functions.php";
                     <option value="Techno">Techno</option>
                 </select>
             </div>
-            <button type="submit">Aggiungi alla playlist</button>
+            <button class="btn btn-primary" type="submit">Aggiungi alla playlist</button>
         </form>
     </div>
 </body>
